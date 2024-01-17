@@ -5208,11 +5208,22 @@ AdjustDamageForMoveType:
 	ld a, [hli]
 	ld d, a    ; d = type 1 of defender
 	ld e, [hl] ; e = type 2 of defender
+
+	ld a, [wPlayerMoveEffect] ; check if attack has "tera effect"
+	cp TERASTAL_EFFECT
+	jr nz, .loadPlayerMoveType
+	ld a, b
+	ld [wMoveType], a ; set attacker's type 1 as attack type 
+	jr .checkWhoseTurn
+.loadPlayerMoveType ; set set the actual attack's type if not tera
 	ld a, [wPlayerMoveType]
 	ld [wMoveType], a
+
+.checkWhoseTurn
 	ldh a, [hWhoseTurn]
 	and a
 	jr z, .next
+
 ; values for enemy turn
 	ld hl, wEnemyMonType
 	ld a, [hli]
@@ -5222,8 +5233,16 @@ AdjustDamageForMoveType:
 	ld a, [hli]
 	ld d, a    ; d = type 1 of defender
 	ld e, [hl] ; e = type 2 of defender
+    ld a, [wEnemyMoveEffect] ; check if attack has "tera effect"
+	cp TERASTAL_EFFECT
+	jr nz, .loadEnemyMoveType
+	ld a, b
+	ld [wMoveType], a ; set attacker's type 1 as attack type 
+	jr .next
+.loadEnemyMoveType ; set set the actual attack's type if not tera
 	ld a, [wEnemyMoveType]
 	ld [wMoveType], a
+
 .next
 	ld a, [wMoveType]
 	cp b ; does the move type match type 1 of the attacker?

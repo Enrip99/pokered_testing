@@ -40,8 +40,8 @@ EvosMovesPointerTable:
 	dw BlastoiseEvosMoves
 	dw PinsirEvosMoves
 	dw TangelaEvosMoves
-	dw MissingNo1FEvosMoves
-	dw MissingNo20EvosMoves
+	dw AipomEvosMoves
+	dw AmbipomEvosMoves
 	dw GrowlitheEvosMoves
 	dw OnixEvosMoves
 	dw FearowEvosMoves
@@ -59,7 +59,7 @@ EvosMovesPointerTable:
 	dw PsyduckEvosMoves
 	dw DrowzeeEvosMoves
 	dw GolemEvosMoves
-	dw MissingNo32EvosMoves
+	dw TerapagosEvosMoves
 	dw MagmarEvosMoves
 	dw MissingNo34EvosMoves
 	dw ElectabuzzEvosMoves
@@ -547,16 +547,28 @@ TangelaEvosMoves:
 	db 49, GROWTH
 	db 0
 
-MissingNo1FEvosMoves:
+AipomEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 33, AMBIPOM
 	db 0
 ; Learnset
+	db 6, SAND_ATTACK
+	db 19, FURY_SWIPES
+	db 27, SWIFT
+	db 33, DOUBLE_HIT
+	db 36, SCREECH
+	db 46, AGILITY
 	db 0
 
-MissingNo20EvosMoves:
+AmbipomEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 20, FURY_SWIPES
+	db 27, SWIFT
+	db 35, DOUBLE_HIT
+	db 36, SCREECH
+	db 46, AGILITY
 	db 0
 
 GrowlitheEvosMoves:
@@ -761,10 +773,14 @@ GolemEvosMoves:
 	db 43, EXPLOSION
 	db 0
 
-MissingNo32EvosMoves:
+TerapagosEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 35, BARRIER
+	db 45, DOUBLE_EDGE
+	db 50, TERA_STARSTORM
+	db 55, EXPLOSION
 	db 0
 
 MagmarEvosMoves:

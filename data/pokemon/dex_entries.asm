@@ -30,8 +30,8 @@ PokedexEntryPointers:
 	dw BlastoiseDexEntry
 	dw PinsirDexEntry
 	dw TangelaDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw AipomDexEntry
+	dw AmbipomDexEntry
 	dw GrowlitheDexEntry
 	dw OnixDexEntry
 	dw FearowDexEntry
@@ -49,7 +49,7 @@ PokedexEntryPointers:
 	dw PsyduckDexEntry
 	dw DrowzeeDexEntry
 	dw GolemDexEntry
-	dw MissingNoDexEntry
+	dw TerapagosDexEntry
 	dw MagmarDexEntry
 	dw MissingNoDexEntry
 	dw ElectabuzzDexEntry
@@ -1252,6 +1252,27 @@ VictreebelDexEntry:
 	db 5,7
 	dw 340
 	text_far _VictreebelDexEntry
+	text_end
+
+AipomDexEntry:
+	db "LONGTAIL@"
+	db 2, 7
+	dw 254
+	text_far _AipomDexEntry
+	text_end
+
+AmbipomDexEntry:
+	db "LONGTAIL@"
+	db 3, 11
+	dw 448
+	text_far _AmbipomDexEntry
+	text_end
+
+TerapagosDexEntry:
+	db "TERASTAL@"
+	db 1, 0
+	dw 353
+	text_far _TerapagosDexEntry
 	text_end
 
 MissingNoDexEntry:

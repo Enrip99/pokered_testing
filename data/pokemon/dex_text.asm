@@ -1507,3 +1507,33 @@ _VictreebelDexEntry::
 	next "has ever returned"
 	next "from there"
 	dex
+
+_AipomDexEntry::
+	text "Its tail is far"
+	next "more versatile"
+	next "than its arms."
+
+	page "Scientists say"
+	next "AIPOM never uses"
+	next "its real hands"
+	dex
+
+_AmbipomDexEntry::
+	text "AMBIPOM uses the"
+	next "hands on its tails"
+	next "to hunt for food."
+
+	page "It likes to split"
+	next "nuts apart with"
+	next "them"
+	dex
+
+_TerapagosDexEntry::
+	text "It was thought to"
+	next "be extinct in"
+	next "PALDEA ages ago."
+
+	page "This #MON is"
+	next "the power source"
+	next "of TERASTALIZATION"
+	dex

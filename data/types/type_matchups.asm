@@ -82,4 +82,6 @@ TypeEffects:
 	db GRASS,        DRAGON,       NOT_VERY_EFFECTIVE
 	db ICE,          DRAGON,       SUPER_EFFECTIVE
 	db DRAGON,       DRAGON,       SUPER_EFFECTIVE
+	db STELLAR,      STELLAR,      SUPER_EFFECTIVE
+	db STELLAR,      NORMAL,       NOT_VERY_EFFECTIVE
 	db -1 ; end

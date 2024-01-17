@@ -164,6 +164,9 @@ AttackAnimationPointers:
 	dw SuperFangAnim
 	dw SlashAnim
 	dw SubstituteAnim
+	dw DoubleHitAnim
+	dw TeraBlastAnim
+	dw TeraStarstormAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -436,6 +439,7 @@ PoisonStingAnim:
 	battle_anim POISON_STING, SUBANIM_0_STAR, 0, 6
 	db -1 ; end
 
+DoubleHitAnim:
 TwineedleAnim:
 	battle_anim TWINEEDLE, SUBANIM_0_STAR_TWICE, 0, 5
 	battle_anim TWINEEDLE, SUBANIM_0_STAR_TWICE, 0, 5
@@ -525,11 +529,13 @@ SurfAnim:
 	battle_anim HYDRO_PUMP, SUBANIM_0_WATER_COLUMNS, 0, 6
 	db -1 ; end
 
+TeraBlastAnim:
 IceBeamAnim:
 	battle_anim ICE_BEAM, SUBANIM_0_BEAM, 0, 3
 	battle_anim NO_MOVE, SUBANIM_0_ICE_RISE, 0, 16
 	db -1 ; end
 
+TeraStarstormAnim:
 BlizzardAnim:
 	battle_anim BLIZZARD, SUBANIM_0_ICE_FALL, 0, 4
 	battle_anim HYDRO_PUMP, SUBANIM_0_ICE_FALL, 0, 4
