@@ -2,4 +2,4 @@
 
 make clean
 make
-cp pokered.gbc /OwO/GBA
+cp pokered.gbc /AwA/Emulació/GBA 

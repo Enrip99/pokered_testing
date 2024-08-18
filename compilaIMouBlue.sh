@@ -2,4 +2,4 @@
 
 make clean
 make
-cp pokeblue.gbc /OwO/GBA
+cp pokeblue.gbc /AwA/Emulació/GBA
