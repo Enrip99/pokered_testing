@@ -4630,7 +4630,7 @@ CriticalHitTest:
 	ld c, [hl]                   ; read move id
 	ld a, [de]
 	sla b                        ; (effective (base speed/2)*2)
-	jr c .critOverflow
+	jr c, .critOverflow
 	bit GETTING_PUMPED, a        ; test for focus energy
 	jr z, .noFocusEnergyUsed     ; do not dupe if not using Focus Energy
 	sla b
