@@ -95,8 +95,8 @@ EvosMovesPointerTable:
 	dw NinetalesEvosMoves
 	dw PikachuEvosMoves
 	dw RaichuEvosMoves
-	dw MissingNo56EvosMoves
-	dw MissingNo57EvosMoves
+	dw ChinchouEvosMoves
+	dw LanturnEvosMoves
 	dw DratiniEvosMoves
 	dw DragonairEvosMoves
 	dw KabutoEvosMoves
@@ -1109,16 +1109,29 @@ RaichuEvosMoves:
 ; Learnset
 	db 0
 
-MissingNo56EvosMoves:
+ChinchouEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 27, LANTURN
 	db 0
 ; Learnset
+	db 5, SUPERSONIC
+	db 17, WATER_GUN
+	db 25, THUNDERSHOCK
+	db 29, CONFUSE_RAY
+	db 37, TAKE_DOWN
+	db 41, HYDRO_PUMP
 	db 0
 
-MissingNo57EvosMoves:
+LanturnEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 5, SUPERSONIC
+	db 17, WATER_GUN
+	db 25, THUNDERSHOCK
+	db 33, CONFUSE_RAY
+	db 45, TAKE_DOWN
+	db 53, HYDRO_PUMP
 	db 0
 
 DratiniEvosMoves:

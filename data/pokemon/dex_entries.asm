@@ -85,8 +85,8 @@ PokedexEntryPointers:
 	dw NinetalesDexEntry
 	dw PikachuDexEntry
 	dw RaichuDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw ChinchouDexEntry
+	dw LanturnDexEntry
 	dw DratiniDexEntry
 	dw DragonairDexEntry
 	dw KabutoDexEntry
@@ -1273,6 +1273,20 @@ TerapagosDexEntry:
 	db 1, 0
 	dw 353
 	text_far _TerapagosDexEntry
+	text_end
+
+ChinchouDexEntry:
+	db "ANGLER@"
+	db 1, 8
+	dw 265
+	text_far _ChinchouDexEntry
+	text_end
+
+LanturnDexEntry:
+	db "LIGHT@"
+	db 3, 11
+	dw 496
+	text_far _LanturnDexEntry
 	text_end
 
 MissingNoDexEntry:

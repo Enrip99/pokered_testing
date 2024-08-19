@@ -154,4 +154,6 @@ MonPartyData:
 	nybble ICON_MON       ; Aipom
 	nybble ICON_MON       ; Ambipom
 	nybble ICON_WATER     ; Terapagos
+	nybble ICON_WATER     ; Chinchou
+	nybble ICON_WATER     ; Lanturn
 	end_nybble_array NUM_POKEMON

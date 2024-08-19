@@ -158,5 +158,7 @@
 	const DEX_AIPOM      ; 152
 	const DEX_AMBIPOM    ; 153
 	const DEX_TERAPAGOS  ; 154
+	const DEX_CHINCHOU   ; 155
+	const DEX_LANTURN    ; 156
 
 DEF NUM_POKEMON EQU const_value - 1

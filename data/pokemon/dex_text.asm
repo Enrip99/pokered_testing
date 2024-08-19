@@ -1537,3 +1537,21 @@ _TerapagosDexEntry::
 	next "the power source"
 	next "of TERASTALIZATION"
 	dex
+
+_ChinchouDexEntry::
+	text "Deep in the ocean"
+	next "floor, it uses its"
+	next "antennae to signal"
+
+	text "danger to other"
+	next "#MON of its own"
+	next "kind"
+
+_LanturnDexEntry::
+	text "LANTURN blinds its"
+	next "opponents with the"
+	next "light it emmits"
+	
+	text "from its antennae."
+	next "It then swallows"
+	next "immobilized prey"

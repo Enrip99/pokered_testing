@@ -34,11 +34,11 @@ UncompressMonSprite::
 	ld a, BANK("Pics 2")
 	jr c, .GotBank
 	ld a, b
-	cp KAKUNA + 2
+	cp WEEDLE + 2
 	ld a, BANK("Pics 3")
 	jr c, .GotBank
 	ld a, b
-	cp PIDGEOT + 1
+	cp PIDGEOTTO + 1
 	ld a, BANK("Pics 4")
 	jr c, .GotBank
 	ld a, BANK("Pics 5")
