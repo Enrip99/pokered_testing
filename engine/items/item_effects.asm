@@ -1838,7 +1838,7 @@ ItemUseGoodRod:
 	srl a
 	jr c, .SetBite
 	and %11
-	cp 2
+	cp 3
 	jr nc, .RandomLoop
 	; choose which monster appears
 	ld hl, GoodRodMons
