@@ -1543,15 +1543,17 @@ _ChinchouDexEntry::
 	next "floor, it uses its"
 	next "antennae to signal"
 
-	text "danger to other"
+	page "danger to other"
 	next "#MON of its own"
 	next "kind"
+	dex
 
 _LanturnDexEntry::
 	text "LANTURN blinds its"
 	next "opponents with the"
 	next "light it emmits"
 	
-	text "from its antennae."
+	page "from its antennae."
 	next "It then swallows"
 	next "immobilized prey"
+	dex
