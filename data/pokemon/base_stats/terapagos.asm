@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db STELLAR, STELLAR ; type
-	db 255 ; catch rate
+	db 15 ; catch rate
 	db 90 ; base exp
 
 	INCBIN "gfx/pokemon/front/terapagos.pic", 0, 1 ; sprite dimensions
