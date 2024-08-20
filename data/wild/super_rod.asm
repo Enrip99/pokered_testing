@@ -73,25 +73,28 @@ SuperRodData:
 	db 15, SLOWPOKE
 
 .Group7:
-	db 4
+	db 5
 	db 5, TENTACOOL
 	db 15, KRABBY
 	db 15, GOLDEEN
 	db 15, MAGIKARP
+	db 15, CHINCHOU
 
 .Group8:
-	db 4
+	db 5
 	db 15, STARYU
 	db 15, HORSEA
 	db 15, SHELLDER
 	db 15, GOLDEEN
+	db 15, CHINCHOU
 
 .Group9:
-	db 4
+	db 5
 	db 23, SLOWBRO
 	db 23, SEAKING
 	db 23, KINGLER
 	db 23, SEADRA
+	db 23, LANTURN
 
 .Group10:
 	db 4
