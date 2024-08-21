@@ -206,8 +206,8 @@ PoliwrathPicBack::    INCBIN "gfx/pokemon/back/poliwrathb.pic"
 
 SECTION "Pics 4", ROMX
 
-WeedlePicFront::      INCBIN "gfx/pokemon/front/weedle.pic"
-WeedlePicBack::       INCBIN "gfx/pokemon/back/weedleb.pic"
+WeedlePicFront::       INCBIN "gfx/pokemon/front/weedle.pic"
+WeedlePicBack::        INCBIN "gfx/pokemon/back/weedleb.pic"
 KakunaPicFront::       INCBIN "gfx/pokemon/front/kakuna.pic"
 KakunaPicBack::        INCBIN "gfx/pokemon/back/kakunab.pic"
 BeedrillPicFront::     INCBIN "gfx/pokemon/front/beedrill.pic"
