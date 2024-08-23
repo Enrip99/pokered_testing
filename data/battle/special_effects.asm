@@ -17,7 +17,6 @@ SpecialEffects:
 	db JUMP_KICK_EFFECT
 	db RECOIL_EFFECT
 	db TERASTAL_EFFECT
-	db SKETCH_EFFECT
 	; fallthrough
 SpecialEffectsCont:
 ; damaging moves whose effect is executed prior to damage calculation

@@ -1367,7 +1367,8 @@ DisableEffect:
 SketchEffect:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
-	jp MoveMissed
+	jp z, PrintButItFailedText_
+	
 
 MoveWasDisabledText:
 	text_far _MoveWasDisabledText
