@@ -1368,8 +1368,50 @@ SketchEffect:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jp z, PrintButItFailedText_
-	
+	ldh a, [hWhoseTurn]
+	and a
+	jr nz, .enemyTurn
+	;menú per seleccionar atac enemic; copiat de mimic
+	ld a, [wCurrentMenuItem]
+	push af ; cima de la pila és index a moviment seleccionat
+	ld a, $1
+	ld [wMoveMenuType], a
+	call MoveSelectionMenu
+	call LoadScreenTilesFromBuffer1
+	ld hl, wEnemyMonMoves
+	ld a, [wCurrentMenuItem]
+	ld c, a
+	ld b, $0
+	add hl, bc
+	ld d, [hl] ; d = moviment seleccionat
 
+; TODO: Fer aqui l'usuari
+; Recursos: engine/pokemon/learn_move.asm
+
+.enemyTurn
+; TODO: Fer aqui l'enemic
+; Agafar un moviment de l'usuari a l'atzar (copiar de mimic)
+; Trobar slot en que hi hagi Sketch -> substituir-ho (engine/pokemon/evos_moves.asm ??)
+	call BattleRandom
+	and $3
+	ld c, a ; c conté el moviment seleccionat
+	ld b, $0
+	ld hl, wBattleMonMoves
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z .enemyTurn
+	ld hl, wEnemyMonMoves
+	ld e, [wEnemyMoveListIndex]
+	ld d, $0
+	add hl, de
+	ld [hl], c
+	ld [wd11e], c
+	call GetMoveName
+	call PlayCurrentMoveAnimation
+	ld hl, MimicLearnedMoveText
+	jp PrintText
+	
 MoveWasDisabledText:
 	text_far _MoveWasDisabledText
 	text_end
