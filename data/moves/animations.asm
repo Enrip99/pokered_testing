@@ -167,6 +167,7 @@ AttackAnimationPointers:
 	dw DoubleHitAnim
 	dw TeraBlastAnim
 	dw TeraStarstormAnim
+	dw SketchAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -780,6 +781,7 @@ NightShadeAnim:
 	battle_anim NO_MOVE, SE_WAVY_SCREEN
 	db -1 ; end
 
+SketchAnim:
 MimicAnim:
 	battle_anim MIMIC, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 1, 6
 	battle_anim MIMIC, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 1, 6
