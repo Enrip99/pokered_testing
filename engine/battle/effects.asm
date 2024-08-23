@@ -1364,6 +1364,11 @@ DisableEffect:
 .moveMissed
 	jp PrintButItFailedText_
 
+SketchEffect:
+	ld a, [wLinkState]
+	cp LINK_STATE_BATTLING
+	jp MoveMissed
+
 MoveWasDisabledText:
 	text_far _MoveWasDisabledText
 	text_end
@@ -1384,7 +1389,7 @@ TransformEffect:
 	jpfar TransformEffect_
 
 ReflectLightScreenEffect:
-	jpfar ReflectLightScreenEffect_
+	jpfar ReflectLightScreenEffect_	
 
 NothingHappenedText:
 	text_far _NothingHappenedText

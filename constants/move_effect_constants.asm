@@ -92,4 +92,5 @@
 	const SPLASH_EFFECT              ; $55
 	const DISABLE_EFFECT             ; $56
 	const TERASTAL_EFFECT            ; $57
+	const SKETCH_EFFECT              ; $58
 DEF NUM_MOVE_EFFECTS EQU const_value - 1

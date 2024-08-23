@@ -88,4 +88,5 @@ MoveEffectPointerTable:
 	dw SplashEffect              ; SPLASH_EFFECT
 	dw DisableEffect             ; DISABLE_EFFECT
 	dw NULL                      ; TERASTAL_EFFECT
+	dw SketchEffect              ; SKETCH_EFFECT
 	assert_table_length NUM_MOVE_EFFECTS
