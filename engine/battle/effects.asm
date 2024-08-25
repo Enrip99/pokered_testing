@@ -1392,7 +1392,7 @@ SketchEffect:
 	cp d
 	jp z, PrintButItFailedText_
 	sub c
-	jp nz .userKnowsMove
+	jp nz, .userKnowsMove
 ;seguim
 	ld a, d
 	ld [wMoveNum], a
@@ -1415,7 +1415,7 @@ SketchEffect:
 	cp c
 	jp z, PrintButItFailedText_
 	sub b
-	jp nz .enemyKnowsMove
+	jp nz, .enemyKnowsMove
 ;seguim
 	ld b, $0
 	ld hl, wBattleMonMoves
