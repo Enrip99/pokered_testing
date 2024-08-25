@@ -1371,7 +1371,7 @@ SketchEffect:
 	ldh a, [hWhoseTurn]
 	and a
 	jp nz, .enemyTurn
-	;menú per seleccionar atac enemic; copiat de mimic
+;menú per seleccionar atac enemic; copiat de mimic
 	ld a, [wCurrentMenuItem]
 	push af ; cima de la pila és index a moviment seleccionat
 	ld a, $1
@@ -1406,6 +1406,13 @@ SketchEffect:
 .enemyTurn
 	call BattleRandom
 	and $3
+	ld c, a ; c conté l'index del moviment seleccionat
+	ld b, $0
+	ld hl, wBattleMonMoves
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .enemyTurn
 	ld c, a ; c conté el moviment seleccionat
 ; comprovar si el coneix ja
 	ld hl, wEnemyMonMoves
@@ -1417,21 +1424,18 @@ SketchEffect:
 	sub b
 	jp nz, .enemyKnowsMove
 ;seguim
-	ld b, $0
-	ld hl, wBattleMonMoves
-	add hl, bc
-	ld a, [hl]
-	and a
-	jr z, .enemyTurn
+	push bc
+	call PlayCurrentMoveAnimation
+	pop bc
 	ld hl, wEnemyMonMoves
 	ld a, [wEnemyMoveListIndex]
 	ld e, a
 	ld d, $0
 	add hl, de
+	ld a, c
 	ld [hl], a
 	ld [wd11e], a
 	call GetMoveName
-	call PlayCurrentMoveAnimation
 	ld hl, MimicLearnedMoveText
 	jp PrintText
 	ret
