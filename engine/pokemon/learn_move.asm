@@ -35,7 +35,7 @@ DontAbandonLearning:
 	call PrintText
 	pop de
 	pop hl
-.next
+	.next
 	ld a, [wMoveNum]
 	ld [hl], a
 	ld bc, wPartyMon1PP - wPartyMon1Moves
@@ -182,6 +182,29 @@ TryingToLearn:
 .cancel
 	scf
 	ret
+
+	;Used for Sketch. Overwrites slot 0-3 at [wd11e]
+ForceLearnMove:
+	call SaveScreenTilesToBuffer1
+	ld a, [wWhichPokemon]
+	ld hl, wPartyMonNicks
+	call GetPartyMonName
+	ld hl, wNameBuffer
+	ld de, wLearnMoveMonName
+	ld bc, NAME_LENGTH
+	call CopyData
+	ld hl, wPartyMon1Moves
+	ld bc, wPartyMon2Moves - wPartyMon1Moves
+	ld a, [wWhichPokemon]
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld b, NUM_MOVES
+	ld a, [wd11e]
+	ld c, a
+	ld b, $0
+	add hl, bc
+	jp DontAbandonLearning.next
 
 LearnedMove1Text:
 	text_far _LearnedMove1Text

@@ -1385,24 +1385,24 @@ SketchEffect:
 	add hl, bc
 	ld d, [hl] ; d = moviment seleccionat
 
-	;còpia de mimic
-	;ld hl, wBattleMonMoves
-	;pop af
-	;ld c, a
-	;ld b, $0
-	;add hl, bc
-	;ld a, d
-	;ld [hl], a
+; comprovar si el coneix ja
 
-	
-
-
-; TODO: Fer aqui l'usuari
-; Recursos: engine/pokemon/learn_move.asm
+	ld a, d
+	ld [wMoveNum], a
+	ld a, [wPlayerMonNumber]
+	ld [wWhichPokemon], a
+	pop af
+	ld [wd11e], a
+	call PlayCurrentMoveAnimation
+	predef ForceLearnMove
+	ret
 .enemyTurn
 	call BattleRandom
 	and $3
 	ld c, a ; c conté el moviment seleccionat
+
+; comprovar si el coneix ja
+
 	ld b, $0
 	ld hl, wBattleMonMoves
 	add hl, bc
