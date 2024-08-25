@@ -1384,9 +1384,16 @@ SketchEffect:
 	ld b, $0
 	add hl, bc
 	ld d, [hl] ; d = moviment seleccionat
-
 ; comprovar si el coneix ja
-
+	ld hl, wBattleMonMoves
+	ld c, NUM_MOVES
+.userKnowsMove
+	ld a, [hli]
+	cp d
+	jp z, PrintButItFailedText_
+	sub c
+	jp nz .userKnowsMove
+;seguim
 	ld a, d
 	ld [wMoveNum], a
 	ld a, [wPlayerMonNumber]
@@ -1400,9 +1407,16 @@ SketchEffect:
 	call BattleRandom
 	and $3
 	ld c, a ; c conté el moviment seleccionat
-
 ; comprovar si el coneix ja
-
+	ld hl, wEnemyMonMoves
+	ld b, NUM_MOVES
+.enemyKnowsMove
+	ld a, [hli]
+	cp c
+	jp z, PrintButItFailedText_
+	sub b
+	jp nz .enemyKnowsMove
+;seguim
 	ld b, $0
 	ld hl, wBattleMonMoves
 	add hl, bc
@@ -1420,6 +1434,7 @@ SketchEffect:
 	call PlayCurrentMoveAnimation
 	ld hl, MimicLearnedMoveText
 	jp PrintText
+	ret
 	
 MoveWasDisabledText:
 	text_far _MoveWasDisabledText
