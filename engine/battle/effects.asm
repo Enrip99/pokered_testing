@@ -1364,6 +1364,78 @@ DisableEffect:
 .moveMissed
 	jp PrintButItFailedText_
 
+SketchEffect:
+	ld a, [wLinkState]
+	cp LINK_STATE_BATTLING
+	jp z, PrintButItFailedText_
+	ldh a, [hWhoseTurn]
+	and a
+	jp nz, .enemyTurn
+	;menú per seleccionar atac enemic; copiat de mimic
+	ld a, [wCurrentMenuItem]
+	push af ; cima de la pila és index a moviment seleccionat
+	ld a, $1
+	ld [wMoveMenuType], a
+	call MoveSelectionMenu
+	call LoadScreenTilesFromBuffer1
+	ld hl, wEnemyMonMoves
+	ld a, [wCurrentMenuItem]
+	ld c, a
+	ld b, $0
+	add hl, bc
+	ld d, [hl] ; d = moviment seleccionat
+; comprovar si el coneix ja
+	ld hl, wBattleMonMoves
+	ld c, NUM_MOVES
+.userKnowsMove
+	ld a, [hli]
+	cp d
+	jp z, PrintButItFailedText_
+	sub c
+	jp nz, .userKnowsMove
+;seguim
+	ld a, d
+	ld [wMoveNum], a
+	ld a, [wPlayerMonNumber]
+	ld [wWhichPokemon], a
+	pop af
+	ld [wd11e], a
+	call PlayCurrentMoveAnimation
+	predef ForceLearnMove
+	ret
+.enemyTurn
+	call BattleRandom
+	and $3
+	ld c, a ; c conté el moviment seleccionat
+; comprovar si el coneix ja
+	ld hl, wEnemyMonMoves
+	ld b, NUM_MOVES
+.enemyKnowsMove
+	ld a, [hli]
+	cp c
+	jp z, PrintButItFailedText_
+	sub b
+	jp nz, .enemyKnowsMove
+;seguim
+	ld b, $0
+	ld hl, wBattleMonMoves
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .enemyTurn
+	ld hl, wEnemyMonMoves
+	ld a, [wEnemyMoveListIndex]
+	ld e, a
+	ld d, $0
+	add hl, de
+	ld [hl], a
+	ld [wd11e], a
+	call GetMoveName
+	call PlayCurrentMoveAnimation
+	ld hl, MimicLearnedMoveText
+	jp PrintText
+	ret
+	
 MoveWasDisabledText:
 	text_far _MoveWasDisabledText
 	text_end
@@ -1384,7 +1456,7 @@ TransformEffect:
 	jpfar TransformEffect_
 
 ReflectLightScreenEffect:
-	jpfar ReflectLightScreenEffect_
+	jpfar ReflectLightScreenEffect_	
 
 NothingHappenedText:
 	text_far _NothingHappenedText

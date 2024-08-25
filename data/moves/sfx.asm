@@ -168,6 +168,7 @@ MoveSoundTable:
 	db SFX_BATTLE_17,          $f0, $40 ; DOUBLE_HIT
     db SFX_BATTLE_28,          $40, $80 ; TERA_BLAST
 	db SFX_BATTLE_29,          $f0, $e0 ; TERA_STARSTORM
+	db SFX_BATTLE_09,          $f0, $40 ; SKETCH
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

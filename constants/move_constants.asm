@@ -173,7 +173,8 @@
 	const DOUBLE_HIT   ; a5
 	const TERA_BLAST   ; a6
 	const TERA_STARSTORM ;a7
-	const STRUGGLE     ; a8
+	const SKETCH       ; a8
+	const STRUGGLE     ; a9
 DEF NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.

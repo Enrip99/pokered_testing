@@ -178,5 +178,6 @@ Moves:
 	move DOUBLE_HIT,   ATTACK_TWICE_EFFECT,         45, NORMAL,        90, 10
 	move TERA_BLAST,   TERASTAL_EFFECT,             80, NORMAL,       100, 10
 	move TERA_STARSTORM, NO_ADDITIONAL_EFFECT,     120, STELLAR,      100, 5
+	move SKETCH,       SKETCH_EFFECT,                0, NORMAL,       100, 1
 	move STRUGGLE,     RECOIL_EFFECT,               50, NORMAL,       100, 10
 	assert_table_length NUM_ATTACKS

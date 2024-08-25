@@ -167,5 +167,6 @@ MoveNames::
 	li "DOUBLE HIT"
 	li "TERA BLAST"
 	li "T-STARSTORM"
+	li "SKETCH"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

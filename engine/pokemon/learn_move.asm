@@ -183,6 +183,36 @@ TryingToLearn:
 	scf
 	ret
 
+	;Used for Sketch. Overwrites slot 0-3 at [wd11e]
+ForceLearnMove:
+	; Necessitem wd11e per omplir el búfer del nom del moviment. El desem a la pila
+	ld a, [wd11e] 
+	push af
+	ld a, [wMoveNum]
+	ld [wd11e], a
+	call GetMoveName
+	call CopyToStringBuffer
+	call SaveScreenTilesToBuffer1
+	ld a, [wWhichPokemon]
+	ld hl, wPartyMonNicks
+	call GetPartyMonName
+	ld hl, wNameBuffer
+	ld de, wLearnMoveMonName
+	ld bc, NAME_LENGTH
+	call CopyData
+	ld hl, wPartyMon1Moves
+	ld bc, wPartyMon2Moves - wPartyMon1Moves
+	ld a, [wWhichPokemon]
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld b, NUM_MOVES
+	pop af ; recuperem l'input
+	ld c, a
+	ld b, $0
+	add hl, bc
+	jp DontAbandonLearning.next
+
 LearnedMove1Text:
 	text_far _LearnedMove1Text
 	sound_get_item_1 ; plays SFX_GET_ITEM_1 in the party menu (rare candy) and plays SFX_LEVEL_UP in battle
