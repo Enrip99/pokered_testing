@@ -35,7 +35,7 @@ DontAbandonLearning:
 	call PrintText
 	pop de
 	pop hl
-	.next
+.next
 	ld a, [wMoveNum]
 	ld [hl], a
 	ld bc, wPartyMon1PP - wPartyMon1Moves
