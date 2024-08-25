@@ -185,6 +185,13 @@ TryingToLearn:
 
 	;Used for Sketch. Overwrites slot 0-3 at [wd11e]
 ForceLearnMove:
+	; Necessitem wd11e per omplir el búfer del nom del moviment. El desem a la pila
+	ld a, [wd11e] 
+	push af
+	ld a, [wMoveNum]
+	ld [wd11e], a
+	call GetMoveName
+	call CopyToStringBuffer
 	call SaveScreenTilesToBuffer1
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks
@@ -200,7 +207,7 @@ ForceLearnMove:
 	ld d, h
 	ld e, l
 	ld b, NUM_MOVES
-	ld a, [wd11e]
+	pop af ; recuperem l'input
 	ld c, a
 	ld b, $0
 	add hl, bc
