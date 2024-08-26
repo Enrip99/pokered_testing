@@ -160,5 +160,6 @@
 	const DEX_TERAPAGOS  ; 154
 	const DEX_CHINCHOU   ; 155
 	const DEX_LANTURN    ; 156
+	const DEX_SMEARGLE   ; 157
 
 DEF NUM_POKEMON EQU const_value - 1

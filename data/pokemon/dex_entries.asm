@@ -51,7 +51,7 @@ PokedexEntryPointers:
 	dw GolemDexEntry
 	dw TerapagosDexEntry
 	dw MagmarDexEntry
-	dw MissingNoDexEntry
+	dw SmeargleDexEntry
 	dw ElectabuzzDexEntry
 	dw MagnetonDexEntry
 	dw KoffingDexEntry
@@ -1287,6 +1287,13 @@ LanturnDexEntry:
 	db 3, 11
 	dw 496
 	text_far _LanturnDexEntry
+	text_end
+
+SmeargleDexEntry:
+	db "PAINTER@"
+	db 	3, 11
+	dw 1279
+	text_far _SmeargleDexEntry
 	text_end
 
 MissingNoDexEntry:

@@ -157,4 +157,5 @@ MonsterPalettes:
 	db PAL_CYANMON   ; TERAPAGOS
 	db PAL_BLUEMON   ; CHINCHOU
 	db PAL_BLUEMON   ; LANTURN
+	db PAL_REDMON    ; SMEARGLE
 	assert_table_length NUM_POKEMON + 1

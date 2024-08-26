@@ -1557,3 +1557,13 @@ _LanturnDexEntry::
 	next "It then swallows"
 	next "immobilized prey"
 	dex
+
+_SmeargleDexEntry::
+	text "SMEARGLE marks its"
+	next "territory with the"
+	next "body fluid coming"
+	
+	page "out of its tail."
+	next "Each SMEARGLE has"
+	next "a different color"
+	dex

@@ -156,4 +156,5 @@ INCLUDE "data/pokemon/base_stats/ambipom.asm"
 INCLUDE "data/pokemon/base_stats/terapagos.asm"
 INCLUDE "data/pokemon/base_stats/chinchou.asm"
 INCLUDE "data/pokemon/base_stats/lanturn.asm"
+INCLUDE "data/pokemon/base_stats/smeargle.asm"
 	assert_table_length NUM_POKEMON

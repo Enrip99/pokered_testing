@@ -58,7 +58,7 @@
 	const GOLEM              ; $31
 	const TERAPAGOS          ; $32
 	const MAGMAR             ; $33
-	const_skip               ; $34
+	const SMEARGLE           ; $34
 	const ELECTABUZZ         ; $35
 	const MAGNETON           ; $36
 	const KOFFING            ; $37

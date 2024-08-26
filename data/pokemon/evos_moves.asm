@@ -61,7 +61,7 @@ EvosMovesPointerTable:
 	dw GolemEvosMoves
 	dw TerapagosEvosMoves
 	dw MagmarEvosMoves
-	dw MissingNo34EvosMoves
+	dw SmeargleEvosMoves
 	dw ElectabuzzEvosMoves
 	dw MagnetonEvosMoves
 	dw KoffingEvosMoves
@@ -795,11 +795,19 @@ MagmarEvosMoves:
 	db 55, FLAMETHROWER
 	db 0
 
-MissingNo34EvosMoves:
+SmeargleEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 0
+	db 11, SKETCH
+	db 21, SKETCH
+	db 31, SKETCH
+	db 41, SKETCH
+	db 51, SKETCH
+	db 61, SKETCH
+	db 71, SKETCH
+	db 81, SKETCH
+	db 91, SKETCH
 
 ElectabuzzEvosMoves:
 ; Evolutions
