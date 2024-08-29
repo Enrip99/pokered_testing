@@ -1385,14 +1385,17 @@ SketchEffect:
 	add hl, bc
 	ld d, [hl] ; d = moviment seleccionat
 ; comprovar si el coneix ja
-	ld hl, wBattleMonMoves
+	ld hl, wPartyMon1Moves
+	ld a, [wWhichPokemon]
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes
 	ld c, NUM_MOVES
-.userKnowsMove
+.checkUserKnowsMove
 	ld a, [hli]
 	cp d
-	jp z, PrintButItFailedText_
+	jp z, .userKnowsMove
 	sub c
-	jp nz, .userKnowsMove
+	jp nz, .checkUserKnowsMove
 ;seguim
 	ld a, d
 	ld [wMoveNum], a
@@ -1403,6 +1406,9 @@ SketchEffect:
 	call PlayCurrentMoveAnimation
 	predef ForceLearnMove
 	ret
+.userKnowsMove
+	pop af
+	jp PrintButItFailedText_
 .enemyTurn
 	call BattleRandom
 	and $3
