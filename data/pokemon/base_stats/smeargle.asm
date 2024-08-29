@@ -1,9 +1,9 @@
-db DEX_SLOWPOKE ; pokedex id
+db DEX_SMEARGLE ; pokedex id
 
 db  55,  20,  35,  45,  75
 ;   hp  atk  def  spd  spc
 
-db WATER, PSYCHIC_TYPE ; type
+db NORMAL, NORMAL ; type
 db 45 ; catch rate
 db 106 ; base exp
 
